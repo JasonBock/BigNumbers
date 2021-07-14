@@ -2,13 +2,20 @@
 using System.Numerics;
 
 PerformCalculationsWithLongs();
+Console.Out.WriteLine();
 PerformCalculationsWithDoubles();
+Console.Out.WriteLine();
 PerformCalculationsWithDecimals();
+Console.Out.WriteLine();
 PerformCalculationsWithBigInteger();
+Console.Out.WriteLine();
 ParseTotalAtoms();
-AddTwoDoubles();
+Console.Out.WriteLine();
+AddTwoFloatingPoints();
+Console.Out.WriteLine();
 PerformCalculationsWithInts();
 
+// https://docs.microsoft.com/en-us/dotnet/api/system.int64?view=net-5.0#remarks
 static void PerformCalculationsWithLongs()
 {
 	Console.Out.WriteLine(nameof(PerformCalculationsWithLongs));
@@ -20,6 +27,7 @@ static void PerformCalculationsWithLongs()
 	Console.Out.WriteLine(numberOfHouses);
 }
 
+// https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-5.0#remarks
 static void PerformCalculationsWithDoubles()
 {
 	Console.Out.WriteLine(nameof(PerformCalculationsWithDoubles));
@@ -31,6 +39,9 @@ static void PerformCalculationsWithDoubles()
 	Console.Out.WriteLine(numberOfHouses);
 }
 
+// https://docs.microsoft.com/en-us/dotnet/api/system.decimal?view=net-5.0#remarks
+// "The Decimal value type is appropriate for financial calculations
+// that require large numbers of significant integral and fractional digits and no round-off errors."
 static void PerformCalculationsWithDecimals()
 {
 	Console.Out.WriteLine(nameof(PerformCalculationsWithDecimals));
@@ -42,6 +53,7 @@ static void PerformCalculationsWithDecimals()
 	Console.Out.WriteLine(numberOfHouses);
 }
 
+// https://docs.microsoft.com/en-us/dotnet/api/system.numerics.biginteger?view=net-5.0#remarks
 static void PerformCalculationsWithBigInteger()
 {
 	Console.Out.WriteLine(nameof(PerformCalculationsWithBigInteger));
@@ -61,13 +73,17 @@ static void ParseTotalAtoms()
 
 	var decimalAtoms = 1.0E80;
 	Console.Out.WriteLine(decimalAtoms);
+
+	decimalAtoms = 1.068742959837859731897589371895738917498731894789317849731897E80;
+	Console.Out.WriteLine(decimalAtoms);
 }
 
 // https://0.30000000000000004.com/
-static void AddTwoDoubles()
+static void AddTwoFloatingPoints()
 {
-	Console.Out.WriteLine(nameof(AddTwoDoubles));
+	Console.Out.WriteLine(nameof(AddTwoFloatingPoints));
 	Console.Out.WriteLine(0.1 + 0.2);
+	Console.Out.WriteLine(0.1M + 0.2M);
 }
 
 static void PerformCalculationsWithInts()
